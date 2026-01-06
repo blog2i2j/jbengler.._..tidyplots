@@ -1,38 +1,34 @@
 # Platform
 
-|field    |value                                 |
-|:--------|:-------------------------------------|
-|version  |R version 4.4.2 (2024-10-31)          |
-|os       |macOS Sequoia 15.3.1                  |
-|system   |aarch64, darwin20                     |
-|ui       |RStudio                               |
-|language |(EN)                                  |
-|collate  |en_US.UTF-8                           |
-|ctype    |en_US.UTF-8                           |
-|tz       |Europe/Berlin                         |
-|date     |2025-03-07                            |
-|rstudio  |2024.12.1+563 Kousa Dogwood (desktop) |
-|pandoc   |NA                                    |
+|field    |value                                                                       |
+|:--------|:---------------------------------------------------------------------------|
+|version  |R version 4.4.3 (2025-02-28)                                                |
+|os       |macOS 26.1                                                                  |
+|system   |aarch64, darwin20                                                           |
+|ui       |RStudio                                                                     |
+|language |(EN)                                                                        |
+|collate  |en_US.UTF-8                                                                 |
+|ctype    |en_US.UTF-8                                                                 |
+|tz       |Europe/Berlin                                                               |
+|date     |2026-01-06                                                                  |
+|rstudio  |2025.09.2+418 Cucumberleaf Sunflower (desktop)                              |
+|pandoc   |NA                                                                          |
+|quarto   |1.7.32 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/quarto |
 
 # Dependencies
 
-|package     |old   |new        |Δ  |
-|:-----------|:-----|:----------|:--|
-|tidyplots   |0.2.1 |0.2.1.9000 |*  |
-|bslib       |NA    |0.9.0      |*  |
-|cli         |NA    |3.6.4      |*  |
-|cpp11       |NA    |0.5.2      |*  |
-|data.table  |NA    |1.17.0     |*  |
-|doBy        |NA    |4.6.25     |*  |
-|ggplot2     |NA    |3.5.1.9000 |*  |
-|jsonlite    |NA    |1.9.1      |*  |
-|purrr       |NA    |1.0.4      |*  |
-|quantreg    |NA    |6.00       |*  |
-|R6          |NA    |2.6.1      |*  |
-|systemfonts |NA    |1.2.1      |*  |
-|textshaping |NA    |1.0.0      |*  |
-|tinytex     |NA    |0.56       |*  |
-|xfun        |NA    |0.51       |*  |
+|package       |old   |new        |Δ  |
+|:-------------|:-----|:----------|:--|
+|tidyplots     |0.3.1 |0.3.1.9000 |*  |
+|data.table    |NA    |1.18.0     |*  |
+|ggsci         |NA    |4.2.0      |*  |
+|isoband       |NA    |0.3.0      |*  |
+|knitr         |NA    |1.51       |*  |
+|RcppArmadillo |NA    |15.2.3-1   |*  |
+|reformulas    |NA    |0.4.3      |*  |
+|tidyr         |NA    |1.3.2      |*  |
+|yaml          |NA    |2.3.12     |*  |
+|zoo           |NA    |1.8-15     |*  |
 
 # Revdeps
 
