@@ -245,6 +245,10 @@ split_plot <- function(plot, by = NULL, rows = NULL, cols = NULL, ncol = NULL, n
   if (!var_is_null({{ by }})) do_facet_wrap <- TRUE
   if (!var_is_null({{ rows }}) || !var_is_null({{ cols }})) do_facet_grid <- TRUE
 
+  warning_msg <- "When splitting the plot by {.arg rows} and {.arg cols}, the arguments {.arg ncol} and {.arg nrow} are ignored."
+  if (do_facet_grid && (!var_is_null({{ ncol }}) || !var_is_null({{ nrow }})))
+    cli::cli_warn(warning_msg)
+
   # Facet wrap
   if (do_facet_wrap) {
     scales <- scales %||% "free"

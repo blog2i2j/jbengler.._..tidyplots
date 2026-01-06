@@ -17,12 +17,13 @@ aligns the behavior with `ggplot2::geom_violin()` (#151).
 * `split_plot()` gains the parameters `rows` and `cols` allowing to split the plot by two variables. 
 This functionality is powered by `ggplot2::facet_grid()`.
 * `split_plot()` gains the parameter `axis.titles` allowing to draw a `"single"` axis title, `"all"` axis titles, or just those on the layout `"margins"`.
-* `adjust_size()` gains the parameters `overall_width` and `overall_height` allowing to set the overall dimensions of a multiplot layout generated with `split_plot()`.
+* `adjust_size()` gains the parameters `overall_width` and `overall_height` to set the dimensions of the entire multiplot layout generated with `split_plot()`. 
+In contrast, the existing `width` and `height` parameters determine the size of each individual plot within the layout.
 * `tidyplot()` gains the parameters `paper` and `ink` allowing to choose a color for the background (`paper`) and the 
-foreground elements like text and lines (`ink`). This is useful to generate plots for dark mode.
+foreground elements like text and lines (`ink`). This allows for global color customization, such as enabling dark-mode plots.
 * `tidyplots_options()` gains the parameters `paper` and `ink` allowing to set these parameters once for all tidyplots in the active R session.
 * The `labels` parameter of `adjust_*_axis()` now survives repeated calls changing the same scale (#136).
-* Fixed `add_data_points()` to respect constant `color` when `white_border = TRUE` (#115).
+* Fixed `add_data_points()` does now respect constant `color` when `white_border = TRUE` (#115).
 * Prepare for deprecation of `%+%` and `geom_label(label.size = NA)`.
 
 # tidyplots 0.3.1
