@@ -1,4 +1,4 @@
-# tidyplots (development version)
+# tidyplots 0.4.0
 
 ## Breaking changes
 
