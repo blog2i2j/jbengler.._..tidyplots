@@ -76,14 +76,14 @@ add_boxplot <- function(plot, dodge_width = NULL, alpha = 0.3, saturation = 1, s
 #'
 #' study |>
 #'   tidyplot(x = treatment, y = score, color = treatment) |>
-#'   add_violin(trim = TRUE)
+#'   add_violin(trim = FALSE)
 #'
 #' study |>
 #'   tidyplot(x = treatment, y = score, color = treatment) |>
 #'   add_violin(linewidth = 1)
 #'
 #' @export
-add_violin <- function(plot, dodge_width = NULL, alpha = 0.3, saturation = 1, trim = FALSE,
+add_violin <- function(plot, dodge_width = NULL, alpha = 0.3, saturation = 1, trim = TRUE,
                        linewidth = 0.25, scale = "width", ...) {
   plot <- check_tidyplot(plot)
   dodge_width <- dodge_width %||% plot$tidyplot$dodge_width

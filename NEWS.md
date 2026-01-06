@@ -5,6 +5,8 @@
 * `split_plot()` is now powered by the ggplot2 faceting functions `ggplot2::facet_wrap()` and `ggplot2::facet_grid()`, 
 thereby replacing `patchwork::wrap_plots()`. While this improves consistency and solves glitches in figure legends, 
 it will eventually break code that relies on patchwork syntax (#95, #141).
+* In `add_violin()`, `trim = TRUE` is now the default. This improves accuracy when plotting small sample sizes and 
+aligns the behavior with `ggplot2::geom_violin()` (#151).
 
 ## Bug fixes
 
