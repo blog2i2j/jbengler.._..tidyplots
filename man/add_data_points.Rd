@@ -31,6 +31,7 @@ add_data_points_jitter(
   preserve = "total",
   rasterize = FALSE,
   rasterize_dpi = 300,
+  seed = 42,
   ...
 )
 
@@ -94,6 +95,8 @@ with overplotting. Typical values range between \code{0} and \code{1}.}
 \item{jitter_height}{Amount of random noise to be added to the
 vertical position of the of the data points. This can be useful to deal
 with overplotting. Typical values range between \code{0} and \code{1}.}
+
+\item{seed}{Random seed controlling point and label jitter.}
 
 \item{cex}{Scaling for adjusting point spacing (see \code{\link[beeswarm:swarmx]{beeswarm::swarmx()}}).
 Values between 1 (default) and 3 tend to work best.}

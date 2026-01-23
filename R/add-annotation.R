@@ -133,7 +133,8 @@ add_reference_lines <- function(plot, x = NULL, y = NULL, linetype = "dashed", l
 add_data_labels <- function(plot, label, data = all_rows(), fontsize = 7,
                             dodge_width = NULL, jitter_width = 0, jitter_height = 0, preserve = "total",
                             background = FALSE, background_color = NULL, background_alpha = 0.6,
-                            label_position = c("below", "above", "left", "right", "center"), ...) {
+                            label_position = c("below", "above", "left", "right", "center"),
+                            seed = 42, ...) {
   plot <- check_tidyplot(plot)
   size <- fontsize/ggplot2::.pt
   background_color <- background_color %||% plot$tidyplot$paper
@@ -167,7 +168,7 @@ add_data_labels <- function(plot, label, data = all_rows(), fontsize = 7,
                                dodge_width = dodge_width,
                                jitter_width = jitter_width,
                                jitter_height = jitter_height,
-                               preserve = preserve)
+                               preserve = preserve, seed = seed)
 
   if (utils::packageVersion("ggplot2") < "3.5.2.9000") {
     plot +
@@ -188,7 +189,8 @@ add_data_labels <- function(plot, label, data = all_rows(), fontsize = 7,
 add_data_labels_repel <- function(plot, label, data = all_rows(), fontsize = 7,
                                   dodge_width = NULL, jitter_width = 0, jitter_height = 0, preserve = "total",
                                   segment.size = 0.2, box.padding = 0.2, max.overlaps = Inf,
-                                  background = FALSE, background_color = NULL, background_alpha = 0.6, ...) {
+                                  background = FALSE, background_color = NULL, background_alpha = 0.6,
+                                  seed = 42, ...) {
   plot <- check_tidyplot(plot)
   size <- fontsize/ggplot2::.pt
   background_color <- background_color %||% plot$tidyplot$paper
@@ -200,13 +202,13 @@ add_data_labels_repel <- function(plot, label, data = all_rows(), fontsize = 7,
                                dodge_width = dodge_width,
                                jitter_width = jitter_width,
                                jitter_height = jitter_height,
-                               preserve = preserve)
+                               preserve = preserve, seed = seed)
 
   args <- list(data = data, ggplot2::aes(label = {{label}}), size = size,
                segment.size = segment.size, box.padding = box.padding, max.overlaps = max.overlaps,
                fill = scales::alpha(background_color, background_alpha),
                label.size = NA, label.padding = label.padding, position = position,
-               seed = 42, ...)
+               seed = seed, ...)
 
   # Specify either `position` or `nudge_x`/`nudge_y`
   if (!is.null(args$nudge_x) || !is.null(args$nudge_y)) {

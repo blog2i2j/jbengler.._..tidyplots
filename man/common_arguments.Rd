@@ -61,6 +61,8 @@ violin plot, etc). Typical values range between \code{0} and \code{1}.}
 
 \item{fontsize}{Font size in points. Defaults to \code{7}.}
 
+\item{seed}{Random seed controlling point and label jitter.}
+
 \item{replace_na}{Whether to replace \code{count = NA} with \code{count = 0}.}
 
 \item{force_continuous}{Whether to force the axis to be continuous. Defaults to \code{FALSE}.}

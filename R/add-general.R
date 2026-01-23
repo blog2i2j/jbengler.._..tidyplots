@@ -50,6 +50,7 @@
 #' @param .reverse Whether the order should be reversed or not. Defaults to `FALSE`, meaning not reversed.
 #' @param scale_cut Scale cut function to be applied. See `scales::cut_short_scale()` and friends.
 #' @param fontsize Font size in points. Defaults to `7`.
+#' @param seed Random seed controlling point and label jitter.
 #' @param replace_na Whether to replace `count = NA` with `count = 0`.
 #' @param force_continuous Whether to force the axis to be continuous. Defaults to `FALSE`.
 #' @param jitter_width Amount of random noise to be added to the

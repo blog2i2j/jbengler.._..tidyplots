@@ -68,13 +68,13 @@ add_data_points_jitter <- function(plot, data = all_rows(),
                                    shape = 19, size = 1, white_border = FALSE,
                                    dodge_width = NULL,
                                    jitter_width = 0.2, jitter_height = 0, preserve = "total",
-                                   rasterize = FALSE, rasterize_dpi = 300, ...) {
+                                   rasterize = FALSE, rasterize_dpi = 300, seed = 42, ...) {
   plot <- check_tidyplot(plot)
   f_points(plot = plot, data = data,
            shape = shape, size = size, white_border = white_border,
            dodge_width = dodge_width,
            jitter_width = jitter_width, jitter_height = jitter_height, preserve = preserve,
-           rasterize = rasterize, rasterize_dpi = rasterize_dpi, ...)
+           rasterize = rasterize, rasterize_dpi = rasterize_dpi, seed = seed, ...)
 }
 #' @rdname add_data_points
 #' @export
@@ -99,14 +99,14 @@ f_points <- function(plot, data = all_rows(),
                      cex = 3, corral = "wrap", corral.width = 0.5,
                      dodge_width = NULL,
                      jitter_width = 0, jitter_height = 0, preserve = "total",
-                     rasterize = FALSE, rasterize_dpi = 300, ...) {
+                     rasterize = FALSE, rasterize_dpi = 300, seed = 42, ...) {
 
   dodge_width <- dodge_width %||% plot$tidyplot$dodge_width
   position <- compute_position(plot = plot,
                                dodge_width = dodge_width,
                                jitter_width = jitter_width,
                                jitter_height = jitter_height,
-                               preserve = preserve)
+                               preserve = preserve, seed = seed)
   params <- list(data = data, shape = shape, size = size, ...)
 
   if (beeswarm) {
@@ -153,7 +153,7 @@ shape_converter <-  function(x) {
   }
 }
 
-compute_position <- function(plot, dodge_width, jitter_width, jitter_height, preserve) {
+compute_position <- function(plot, dodge_width, jitter_width, jitter_height, preserve, seed) {
   if (dodge_width == 0) {
     position <- ggplot2::position_identity()
   } else {
@@ -163,7 +163,7 @@ compute_position <- function(plot, dodge_width, jitter_width, jitter_height, pre
       position <- ggplot2::position_jitterdodge(jitter.width = jitter_width,
                                                 jitter.height = jitter_height,
                                                 dodge.width = dodge_width,
-                                                seed = 42)
+                                                seed = seed)
   }
   position
 }

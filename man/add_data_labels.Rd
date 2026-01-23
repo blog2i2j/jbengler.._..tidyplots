@@ -18,6 +18,7 @@ add_data_labels(
   background_color = NULL,
   background_alpha = 0.6,
   label_position = c("below", "above", "left", "right", "center"),
+  seed = 42,
   ...
 )
 
@@ -36,6 +37,7 @@ add_data_labels_repel(
   background = FALSE,
   background_color = NULL,
   background_alpha = 0.6,
+  seed = 42,
   ...
 )
 }
@@ -75,6 +77,8 @@ a position, or the width of a \code{"single"} element?}
 \item{background_alpha}{Opacity of the background box. Defaults to \code{0.6}.}
 
 \item{label_position}{Position of the label in relation to the data point. Can be one of \code{c("below", "above", "left", "right", "center")}.}
+
+\item{seed}{Random seed controlling point and label jitter.}
 
 \item{...}{Arguments passed on to the \code{geom} function.}
 
